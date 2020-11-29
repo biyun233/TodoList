@@ -2,12 +2,27 @@
   <input 	class			= "toggle"
           type			= "checkbox"
           name			= "fait"
+          [ngModel]="item.isDone"
+          (ngModelChange)="itemDone($event)"
   />
-  <label 	class="texte"></label>
-  <button class="destroy"></button>
+  <!-- vérifier l'état d'item et utilise différents css -->
+  <!-- l'item est complété -->
+  <div *ngIf="item.isDone; else editingTodo" class="completed">
+    <label>{{item.label}}</label>
+  </div>
+  <!-- l'item n'est pas complété -->
+  <ng-template #editingTodo>
+  <label 	class="texte">
+    <form (submit)="itemLabel(newLab.value)">
+      <input class="new" type="text" name="label" [ngModel]="item.label" #newLab/>
+    </form>
+  </label>
+</ng-template>
+  <button class="destroy" (click)="itemDelete()"></button>
 </div>
-<form>
+<form (submit)="itemLabel(newLab.value)">
   <input  #newTextInput
           name    = "newTextInput"
-          class   = "edit"/>
+          class   = "edit"
+          [ngModel]="item.label"/>
 </form>
