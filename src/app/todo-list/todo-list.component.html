@@ -10,7 +10,7 @@
     </form>
   </header>
   <section class="main">
-    <input *ngIf="filter_item().length" class="toggle-all"
+    <input *ngIf="todoList.items.length != 0" class="toggle-all"
             type="checkbox"
             name="toggleAll"
             (change)="listDone()"
@@ -23,7 +23,7 @@
       </li>
     </ul>
   </section>
-  <footer class="footer" *ngIf="filter_item().length">
+  <footer class="footer" *ngIf="todoList.items.length != 0">
     <!-- changer au superiel d'après du nombre de cochés -->
     <span *ngIf="countDone() === 1" class="todo-count"><strong>{{countDone()}}</strong> restante</span>
     <span *ngIf="countDone() > 1" class="todo-count"><strong>{{countDone()}}</strong> restantes</span>
