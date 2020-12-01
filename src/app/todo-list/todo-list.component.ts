@@ -13,6 +13,7 @@ export class TodoListComponent implements OnInit {
     private todoList: TodoListData; 
     filter : string;
     constructor(private todoService: TodoService) {
+        todoService.init();
         todoService.getTodoListDataObservable().subscribe( tdl => this.todoList = tdl );
     }
 

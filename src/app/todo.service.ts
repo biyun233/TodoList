@@ -7,11 +7,13 @@ import {TodoItemData} from './dataTypes/TodoItemData';
 export class TodoService {
 
   //On récupère todoList dans local avec bon type
-  private todoListSubject = new BehaviorSubject<TodoListData>(JSON.parse(localStorage.getItem("todoList")));
+  private todoListSubject = new BehaviorSubject<TodoListData>( {label: 'TodoList', items: []} );
 
-  constructor() { }
+  constructor() {
+    this.todoListSubject = new BehaviorSubject<TodoListData>(JSON.parse(localStorage.getItem("todoList")));
+  }
 
-
+  
   getTodoListDataObservable(): Observable<TodoListData> {
     return this.todoListSubject.asObservable();
   }
@@ -53,11 +55,15 @@ export class TodoService {
     this.miseAjour();
   }
 
-  miseAjour(){
+  init(){
     //si la donnée en local est null, on l'initialise
-    if(!localStorage.getItem("todoList")){
-      localStorage.setItem("todoList",JSON.stringify(new BehaviorSubject<TodoListData>( {label: 'TodoList', items: []} ).asObservable()));
+    if(!JSON.parse(localStorage.getItem("todoList"))){
+      var nouveau = JSON.stringify(this.todoListSubject.getValue());
+      localStorage.setItem("todoList",nouveau);
     }
+  }
+  miseAjour(){
+    
     //On met todoList en temp réel dans local
     var nouveau = JSON.stringify(this.todoListSubject.getValue());
     localStorage.setItem("todoList",nouveau);
