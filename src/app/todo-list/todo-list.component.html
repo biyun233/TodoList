@@ -27,7 +27,8 @@
     <!-- changer au superiel d'après du nombre de cochés -->
     <span *ngIf="countDone() === 1" class="todo-count"><strong>{{countDone()}}</strong> restante</span>
     <span *ngIf="countDone() > 1" class="todo-count"><strong>{{countDone()}}</strong> restantes</span>
-
+    <!-- effacer tout les items-->
+    <button class="clear-all" *ngIf="todoList.items.length != 0" (click)="DeleteAll()">Effacer Tout</button>
     <!-- Filtrer -->
     <ul class="filters" >
       <li>
@@ -40,6 +41,7 @@
         <a class="filterCompleted" [ngClass]="{'active':filter==='Complétés'}" (click)="filter='Complétés'">Complétés</a>
       </li>
     </ul>
+    <!-- supprimer des items déjà fait-->
     <button class="clear-completed" *ngIf="verifyDone()" (click)="DeleteDone()">Supprimer cochées</button>
   </footer>
 </section>

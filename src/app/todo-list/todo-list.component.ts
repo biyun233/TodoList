@@ -81,6 +81,13 @@ export class TodoListComponent implements OnInit {
         }
     }
 
+    // effacer tout
+    DeleteAll(){
+        for(let item of this.todoList.items){
+            this.todoService.removeItems(item);
+        }
+    }
+
     //navigation pour Tous, Actifs, Complétés
     filter_item(){
         if(this.filter == 'Tous'){

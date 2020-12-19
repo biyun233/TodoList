@@ -299,7 +299,7 @@ label[for='toggle-all'] {
   padding: 0;
   list-style: none;
   position: absolute;
-  right: 0;
+  right: 135px;
   left: 0;
 }
 
@@ -328,6 +328,20 @@ label[for='toggle-all'] {
 .clear-completed,
 html .clear-completed:active {
   float: right;
+  line-height: 20px;
+  text-decoration: none;
+  cursor: pointer;
+  position: absolute;
+  right: 111px;
+}
+
+.clear-completed:hover {
+  text-decoration: underline;
+}
+
+.clear-all,
+html .clear-all:active {
+  float: right;
   position: relative;
   line-height: 20px;
   text-decoration: none;
@@ -335,7 +349,7 @@ html .clear-completed:active {
   position: relative;
 }
 
-.clear-completed:hover {
+.clear-all:hover {
   text-decoration: underline;
 }
 
