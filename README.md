@@ -34,9 +34,16 @@ Avec les fonctions: Filtrer, Ajouter, Supprimer, Supprimer cochés, cocher tous,
 **1 - Sérialisation / désérialisation des données localement (Local Storage)**  
 Vous changez de branche au **local_storage** pour tester la fonctionnalité Local Storage : sauvegarder les données localement.
 
+
 **2 - Effacer Tout**  
 Vous changez de branche au **effacer_tout** pour tester la fonctionnalité  : Effacer tous les items dans TodoList.
 
+
+**3 - Identification avec Firebase**  
+Vous changez de branche au **firebase** pour tester la fonctionnalité  : S'inscrire et Se connecter.
+Pour tester: 
+email: test@test.fr
+password: 12345678
 
 
 
