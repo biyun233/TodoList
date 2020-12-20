@@ -10,6 +10,7 @@ export class TodoService {
   private todoListSubject = new BehaviorSubject<TodoListData>( {label: 'TodoList', items: []} );
 
   constructor() {
+    this.init();
     this.todoListSubject = new BehaviorSubject<TodoListData>(JSON.parse(localStorage.getItem("todoList")));
   }
 
