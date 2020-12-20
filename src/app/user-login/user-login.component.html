@@ -1,0 +1,27 @@
+<div class="container">
+    <form [formGroup]="LoginForm" (ngSubmit)="onSubmit()" class="mt-5 pageForm">
+      <div class="form-group ">
+  
+        <input type="email" formControlName="email" class="form-control" id="email" [ngClass]="{'is-invalid': submit && FormValidation.email.errors}"
+               placeholder="Entrer votre adraisse Email"/>
+        <div *ngIf="submit && FormValidation.email.errors" class="invalid-feedback">
+          <div *ngIf="FormValidation.email.errors.required" >L'adresse Email est Obligatoire !</div>
+          <div *ngIf="FormValidation.email.errors.email">L'adresse mail n'est pas valide !</div>
+        </div>
+      </div>
+      <div class="form-group">
+  
+        <input type="password" formControlName="password" class="form-control" id="password" [ngClass]="{'is-invalid': submit && FormValidation.password.errors}"
+               placeholder="Entrer un Mot de passe"/>
+        <div *ngIf="submit && FormValidation.password.errors" class="invalid-feedback">
+          <div *ngIf="FormValidation.password.errors.required">Le Mot de passe est Obligatoire !</div>
+          <div *ngIf="FormValidation.password.errors.minlength" >Le nombre de Mot de Passe doit être égal ou supérieur à 8 !</div>
+        </div>
+      </div>
+  
+  
+      <button type="submit" [disabled]=""  class="btn btn-primary">Connexion</button>
+      <a [routerLink]="['/user-register']" class="text-decoration-none text-info ml-5">Créer un Compte </a>
+    </form>
+  
+  </div>

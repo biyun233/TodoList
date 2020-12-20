@@ -1,0 +1,35 @@
+<div class="container">
+
+    <form [formGroup]="FormUser" (ngSubmit)="onSubmit()" class="mt-5 pageForm">
+      <div class="form-group ">
+  
+        <input type="email" formControlName="email" class="form-control" id="email" [ngClass]="{'is-invalid': submit && FormValidation.email.errors}"
+               placeholder="Entrer votre adraisse Email"/>
+        <div *ngIf="submit && FormValidation.email.errors" class="invalid-feedback">
+          <div *ngIf="FormValidation.email.errors.required" >L'adresse Email est Obligatoire !</div>
+          <div *ngIf="FormValidation.email.errors.email">L'adresse mail n'est pas valide !</div>
+        </div>
+      </div>
+      <div class="form-group">
+  
+        <input type="password" formControlName="password" class="form-control" id="password" [ngClass]="{'is-invalid': submit && FormValidation.password.errors}"
+               placeholder="Entrer un Mot de passe"/>
+        <div *ngIf="submit && FormValidation.password.errors" class="invalid-feedback">
+          <div *ngIf="FormValidation.password.errors.required">Le Mot de passe est Obligatoire !</div>
+          <div *ngIf="FormValidation.password.errors.minlength" >Le nombre de Mot de Passe doit être égal ou supérieur à 8 !</div>
+        </div>
+      </div>
+      <div class="form-group">
+  
+        <input type="password" formControlName="confirmPassword" class="form-control" id="confirmPassword" [ngClass]="{'is-invalid': submit && FormValidation.confirmPassword.errors}"
+               placeholder="Confirmer votre Mot de passe"/>
+        <div *ngIf="submit && FormValidation.confirmPassword.errors" class="invalid-feedback">
+          <div *ngIf="FormValidation.confirmPassword.errors.required">Veuillez Confirmer votre Mot de passe !</div>
+          <div *ngIf="FormValidation.confirmPassword.errors.mustMatch">Les Mots de passe ne sont pas égaux</div>
+        </div>
+      </div>
+  
+      <button type="submit" [disabled]=""  class="btn btn-primary">Inscription</button>
+      <a [routerLink]="['/user-login']" class="text-decoration-none text-info ml-5">Se Connecter</a>
+    </form>
+  </div>

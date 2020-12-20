@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {TodoListData} from '../dataTypes/TodoListData';
 import {TodoItemData} from '../dataTypes/TodoItemData';
 import {TodoService} from '../todo.service';
-
+import {AuthServiceService} from '../auth-service.service';
 @Component({
     selector: 'app-todo-list',
     templateUrl: './todo-list.component.html',
@@ -12,7 +12,7 @@ export class TodoListComponent implements OnInit {
 
     private todoList: TodoListData; 
     filter : string;
-    constructor(private todoService: TodoService) {
+    constructor(private todoService: TodoService,private authService: AuthServiceService) {
         todoService.getTodoListDataObservable().subscribe( tdl => this.todoList = tdl );
     }
 
@@ -105,4 +105,8 @@ export class TodoListComponent implements OnInit {
         return done;
     }
 
+    // Déconnexion de l'Utilisateur
+  logout() {
+    this.authService.logout();
+  }
 }
