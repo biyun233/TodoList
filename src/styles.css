@@ -73,7 +73,7 @@ input[type="checkbox"] {
 
 .todoapp h1 {
   position: absolute;
-  top: -155px;
+  top: -100px;
   width: 100%;
   font-size: 100px;
   font-weight: 100;
@@ -82,6 +82,7 @@ input[type="checkbox"] {
   -webkit-text-rendering: optimizeLegibility;
   -moz-text-rendering: optimizeLegibility;
   text-rendering: optimizeLegibility;
+  margin: -20px;
 }
 
 .new-todo,
@@ -265,7 +266,7 @@ label[for='toggle-all'] {
 .footer {
   color: #777;
   padding: 10px 15px;
-  height: 20px;
+  height: 42px;
   text-align: center;
   border-top: 1px solid #e6e6e6;
 }
