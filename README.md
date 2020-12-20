@@ -33,6 +33,7 @@ Avec les fonctions: Filtrer, Ajouter, Supprimer, Supprimer cochés, cocher tous,
 
 **1 - Sérialisation / désérialisation des données localement (Local Storage)**  
 Vous changez de branche au **local_storage** pour tester la fonctionnalité Local Storage : sauvegarder les données localement.
+
 **Attention: peut être ça va pas marcher avec Chrome, utilisez plutôt Firefox ou Safari pour tester.**
 
 **2 - Effacer Tout**  
