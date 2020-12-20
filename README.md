@@ -43,11 +43,17 @@ Vous changez de branche au **effacer_tout** pour tester la fonctionnalité  : Ef
 **3 - Identification avec Firebase**  
 Vous changez de branche au **firebase** pour tester la fonctionnalité  : S'inscrire et Se connecter.
 
-Pour tester: 
+Il faut ajouter des APIs ppour tester, tapez les commandes suivantes après **npm install**:  
+**npm install @angular/fire**  
+et puis  
+**npm install @angular/fire firebase popper.js jquery bootstrap**
 
-email: test@test.fr
 
+**Pour tester:**
+
+email: test@test.fr  
 password: 12345678
+
 
 
 
