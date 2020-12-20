@@ -17,9 +17,11 @@ et puis
 3. Vous allez voir TodoList
 
 ### Changer de la Branche
-1. Allez dans le répertoire TodoList et tapez la commande dans la terminale  
-git pull origin nom_branche:nom_branche
-(Ex: **git pull origin local_storage:local_storage**)
+1. Allez dans le répertoire TodoList et tapez les commandes dans la terminale  
+git checkout main  
+git checkout -b nom_branche  
+git pull origin nom_branche
+
 2. Refaire l'étape Tester
 
 
