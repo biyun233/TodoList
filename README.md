@@ -5,11 +5,23 @@
 1. Allez dans la terminale, utilisez la commande ci-dessous dans un bon répertoire  
 **git clone https://github.com/biyun233/TodoList.git**
 
-2. Allez dans le répertoire TodoList et tapez la commande dans la terminale  
+### Tester
+1. Allez dans le répertoire TodoList et tapez la commande dans la terminale  
+**npm install**
+et puis
 **npm start**
-4. Copiez le lien sorti dans votre terminal
+
+2. Copiez le lien sorti dans votre terminal
 **http://localhost:4200**
-5. Vous allez voir TodoList
+
+3. Vous allez voir TodoList
+
+### Changer de la Branche
+1. Allez dans le répertoire TodoList et tapez la commande dans la terminale  
+git pull origin nom_branche:nom_branche
+(Ex: **git pull origin local_storage:local_storage**)
+2. Refaire l'étape Tester
+
 
 ### Fonctionnalité
 
@@ -20,10 +32,10 @@ TodoList fonctionne parfaitement comme la démo http://todomvc.com/examples/vani
 Avec les fonctions: Filtrer, Ajouter, Supprimer, Supprimer cochés, cocher tous, etc.
 
 **1 - Sérialisation / désérialisation des données localement (Local Storage)**  
-Vous changez de branche au **local_storage** pour exécuter la fonctionnalité Local Storage : sauvegarder les données localement.
+Vous changez de branche au **local_storage** pour tester la fonctionnalité Local Storage : sauvegarder les données localement.
 
 **2 - Effacer Tout**  
-Vous changez de branche au **effacer_tout** pour exécuter la fonctionnalité  : Effacer tous les items dans TodoList.
+Vous changez de branche au **effacer_tout** pour tester la fonctionnalité  : Effacer tous les items dans TodoList.
 
 
 
